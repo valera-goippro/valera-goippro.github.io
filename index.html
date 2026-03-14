@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valera OS — Projects Hub</title>
+<style>
+:root {
+  --bg: #0a0b0f;
+  --card: #12141c;
+  --border: #1e2030;
+  --text: #e4e4e7;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --accent2: #22c55e;
+  --accent3: #f59e0b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #0a0b0f 0%, #1a1040 50%, #0a0b0f 100%);
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #6366f1, #a78bfa, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-top: 12px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.projects {
+  display: grid;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .projects { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .projects { grid-template-columns: 1fr 1fr 1fr; }
+}
+.project {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: transform 0.2s, border-color 0.2s;
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+}
+.project:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+.project-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.project h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.project p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.project .tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tag-live { background: rgba(34,197,94,0.15); color: var(--accent2); }
+.tag-dev { background: rgba(245,158,11,0.15); color: var(--accent3); }
+.tag-alpha { background: rgba(99,102,241,0.15); color: var(--accent); }
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.footer a { color: var(--accent); text-decoration: none; }
+.status-bar {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent2);
+}
+.status-dot.warn { background: var(--accent3); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Valera OS</h1>
+  <p>Personal AI infrastructure. Voice gateways, automation, intelligent assistants — all connected.</p>
+</div>
+
+<div class="status-bar">
+  <div class="status-item"><span class="status-dot"></span> Dashboard</div>
+  <div class="status-item"><span class="status-dot"></span> FreeSWITCH</div>
+  <div class="status-item"><span class="status-dot"></span> Voice Gateway</div>
+  <div class="status-item"><span class="status-dot"></span> Arishka Bot</div>
+  <div class="status-item"><span class="status-dot"></span> Shell MCP</div>
+</div>
+
+<div class="projects">
+
+  <a class="project" href="https://gsm-travel.com" target="_blank">
+    <div class="project-icon">📡</div>
+    <h2>GoIPpro</h2>
+    <p>B2B platform for SIM traffic monetization through GoIP/GSM gateways. Europe, Asia, Africa, Iran.</p>
+    <span class="tag tag-live">Live</span>
+  </a>
+
+  <a class="project" href="https://status.smartcare.house" target="_blank">
+    <div class="project-icon">🎙</div>
+    <h2>AI Voice Gateway</h2>
+    <p>FreeSWITCH + Pipecat + Groq Whisper + LLM + OpenAI TTS. Real-time voice AI over telephone.</p>
+    <span class="tag tag-live">Live</span>
+  </a>
+
+  <a class="project" href="https://status.smartcare.house" target="_blank">
+    <div class="project-icon">🖥</div>
+    <h2>Valera OS</h2>
+    <p>Personal AI interface. Firebase Auth, Shell MCP bridge, Chrome Extension. Command center for everything.</p>
+    <span class="tag tag-dev">In Dev</span>
+  </a>
+
+  <a class="project" href="https://proxy.smartcare.house/health" target="_blank">
+    <div class="project-icon">🔐</div>
+    <h2>Claude Proxy 2FA</h2>
+    <p>Anthropic API proxy with Telegram approval. Every request requires explicit confirmation.</p>
+    <span class="tag tag-live">Live</span>
+  </a>
+
+  <a class="project" href="https://status.smartcare.house" target="_blank">
+    <div class="project-icon">🏠</div>
+    <h2>Domovoy 2.0</h2>
+    <p>Home Assistant + cameras + face recognition + voice assistant Lenka. Smart home AI.</p>
+    <span class="tag tag-alpha">Planned</span>
+  </a>
+
+  <a class="project" href="#" target="_blank">
+    <div class="project-icon">💪</div>
+    <h2>EMG Orthosis</h2>
+    <p>EMG from healthy arm → AI → SMA glove on affected arm (CCFES). Meta Neural Band target.</p>
+    <span class="tag tag-alpha">Research</span>
+  </a>
+
+</div>
+
+<div class="footer">
+  <p>Built by Valera &middot; Porto, Portugal &middot; <a href="https://status.smartcare.house">System Status</a></p>
+</div>
+
+</body>
+</html>
